@@ -1,91 +1,116 @@
-# Formula 1 Lap Times – Final Project
+# Ivan Rey Pestana — Data Portfolio
 
-Final project for a data visualization / data exploration course.  
-Analysis of Formula 1 lap times with static and interactive charts in a Jupyter notebook.
+**Data Science | Machine Learning | Data Visualization | Operations Analytics**
 
----
-
-## 1. Project Overview
-
-This project:
-
-- loads and cleans a Formula 1 lap-time dataset  
-- explores lap time distributions and trends across decades  
-- compares circuits and continents  
-- compares teams and drivers  
-- builds interactive Altair visualizations for open-ended exploration  
-
-Main file: **`Final_Project.ipynb`**
+Hi! I'm Ivan Rey Pestana, a data-focused student with hands-on experience applying Python, statistical modeling, and visualization tools to real-world datasets. This repository collects my individual and collaborative projects spanning machine learning, exploratory data analysis, and operational process improvement.
 
 ---
 
-## 2. Folder / File Structure
+## Projects
 
-.
-├── Final_Project.ipynb      # main notebook: cleaning, analysis, visualizations
-├── top5_laps_dataset.csv    # dataset used in the notebook
-└── README.md                # this file
-```
+| # | Project | Tools | Description |
+|---|---------|-------|-------------|
+| 1 | [F1 Lap Times Analysis](#1-formula-1-lap-times-analysis) | Python, Altair, pandas | End-to-end EDA of 70 years of F1 data with interactive charts |
+| 2 | [Movie Ratings — ML Classification](#2-movie-ratings--ml-classification) | Python, scikit-learn, matplotlib | Logistic Regression & Decision Tree to predict top-rated films |
+| 3 | [Car Price Analysis Report](#3-car-price-analysis-report) | Python / statistical analysis | Regression analysis and pricing insights from car market data |
+| 4 | [OFX Legends Reslot Analysis](#4-ofx-legends-reslot-analysis) | Operations research | Process optimization and TO-BE workflow design |
 
 ---
 
-## 3. Installation
+## 1. Formula 1 Lap Times Analysis
 
-### Requirements
+**File:** `Final_Project.ipynb` · **Dataset:** `top5_laps_dataset.csv`
 
-- Python 3.8+  
-- Jupyter Notebook or JupyterLab  
+End-to-end data exploration of Formula 1 lap times from 1950–2020. The notebook answers three core questions:
 
-### Python packages
+1. How are F1 lap times distributed overall, and how have they changed across decades?
+2. How does circuit design (layout, continent, track type) affect lap performance?
+3. Which teams and drivers stand out when controlling for car and conditions?
 
-- `pandas`  
-- `numpy`  
-- `altair`  
+**My contributions** (group project with J. Cart, G. Jaimes, I. Gomez, J. Czemeinski):
+- Data cleaning pipeline (outlier removal, millisecond → second conversion, decade binning)
+- Correlation heatmap and podium-rate segmentation analysis
+- Interactive Altair charts (linked brush scatter, team dropdown selector)
+- Written interpretations for all visualization sections
 
-Install with:
+**Key findings:**
+- Starting grid position and final race position are positively correlated (r ≈ 0.50)
+- Average lap times have decreased steadily since the 1950s, with the sharpest improvement in the 1980s–2000s driven by turbo and aerodynamic advances
+- High-speed circuits (Monza, Spa) show lap times 30–50 seconds faster than technical street circuits (Monaco, Singapore)
+- Hamilton and Verstappen rank among the fastest average lap times in the modern hybrid era
 
+**Stack:** `pandas` · `altair` · `numpy` · `seaborn` · `matplotlib`
+
+### Run it
 ```bash
-pip install pandas numpy altair
+pip install pandas numpy altair seaborn matplotlib
+jupyter notebook Final_Project.ipynb
 ```
 
 ---
 
-## 4. How to Run the Notebook
+## 2. Movie Ratings — ML Classification
 
-1. Ensure these files are in the same folder:
+**File:** `BigDataMoviesCleaned.ipynb` · **Dataset:** `movies.csv` (see source below)
 
-   - `Final_Project.ipynb`  
-   - `top5_laps_dataset.csv`  
+Binary classification task: predict whether a movie will be "top-rated" (IMDb rating ≥ 8.5) using features like genre, year, runtime, budget, and box office gross. Two models are compared head-to-head.
 
-2. Open a terminal in that folder and start Jupyter:
+**Models trained:**
+- Logistic Regression — 75% accuracy; struggles with the minority class (AUC ≈ 0.51)
+- Decision Tree — 73% accuracy; similar class imbalance issues
 
-   ```bash
-   jupyter notebook
-   ```
+**Key finding:** Both models are limited by a heavily imbalanced dataset (few top-rated movies). The analysis clearly identifies this as the bottleneck and recommends class balancing (SMOTE or weighted loss) as the next step.
 
-3. In the browser, open **`Final_Project.ipynb`**.  
-4. Use **Kernel → Restart & Run All** to execute the full workflow from top to bottom.  
+**Dataset source:** [`movies.csv` from Kaggle — IMDB Movies Dataset](https://www.kaggle.com/datasets/harshitshankhdhar/imdb-dataset-of-top-1000-movies-and-tv-shows)  
+Download and place `movies.csv` in the same folder before running.
 
-The notebook will:
+**Stack:** `pandas` · `numpy` · `scikit-learn` · `matplotlib` · `seaborn`
 
-- load the dataset  
-- clean and prepare the data  
-- compute summary statistics  
-- generate static and interactive Altair charts  
-
-If Altair charts do not render, add this near the top of the notebook:
-
-```python
-import altair as alt
-alt.renderers.enable("default")
+### Run it
+```bash
+pip install pandas numpy scikit-learn matplotlib seaborn
+# Download movies.csv from the Kaggle link above
+jupyter notebook BigDataMoviesCleaned.ipynb
 ```
 
 ---
 
-## 5. Dataset Source
+## 3. Car Price Analysis Report
 
-- Public Formula 1 statistics from:  
-  https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020?resource=download
+**File:** `Final_CarPrice_Report.pdf`
 
+Statistical analysis of used car pricing data. The report covers:
+- Feature correlation analysis (mileage, age, brand vs. price)
+- Regression modelling for price prediction
+- Actionable pricing insights for buyers and sellers
+
+*(PDF — view directly on GitHub)*
 
 ---
+
+## 4. OFX Legends Reslot Analysis
+
+**File:** `OFX Legends Reslot Analysis TO-BE Report.pdf`
+
+Operational process improvement study. Designed and documented a TO-BE (future-state) workflow for a reslotting operation, including bottleneck identification, capacity analysis, and recommended process changes.
+
+*(PDF — view directly on GitHub)*
+
+---
+
+## Tech Stack Overview
+
+| Area | Tools |
+|------|-------|
+| Data manipulation | `pandas`, `numpy` |
+| Machine learning | `scikit-learn` |
+| Visualization | `altair`, `matplotlib`, `seaborn` |
+| Notebooks | Jupyter |
+| Languages | Python 3.8+ |
+
+---
+
+## Contact
+
+- **GitHub:** [github.com/ReyPestana](https://github.com/ReyPestana)
+- **Email:** ivanrey1809@gmail.com
