@@ -1,0 +1,15 @@
+# Core data stack
+pandas>=1.5
+numpy>=1.23
+
+# Visualization
+altair>=5.0
+matplotlib>=3.6
+seaborn>=0.12
+
+# Machine learning
+scikit-learn>=1.2
+
+# Notebook
+jupyter>=1.0
+jupyterlab>=3.0
